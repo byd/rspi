@@ -13,7 +13,7 @@ RPi.GPIO.setwarnings(False)
 while True:
     try:
         print 'val: ', RPi.GPIO.input(port)
-        time.sleep(0.4)
+        time.sleep(0.1)
     except Exception, e:
         pass
 RPi.GPIO.cleanup()

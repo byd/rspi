@@ -35,6 +35,7 @@ try:
             rds.hset('dev_value', id, RPi.GPIO.input(port))
             time.sleep(interval)
         except Exception, e:
+            print e
             pass
     RPi.GPIO.cleanup()
 except Exception, e:

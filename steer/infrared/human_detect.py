@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-import time
 import ConfigParser
+import time
 
 import redis
 
@@ -32,7 +32,7 @@ try:
 
     while True:
         try:
-            rds.hset('dev_value', id, RPi.GPIO.input(port))
+            rds.hset('dev_value', id, "%d@%f" % (RPi.GPIO.input(port), time.time()))
             time.sleep(interval)
         except Exception, e:
             print e
